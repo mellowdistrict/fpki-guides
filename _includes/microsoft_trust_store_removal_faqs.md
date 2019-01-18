@@ -53,7 +53,7 @@ If you use other Windows versions in your environment, please let us know (fpki@
 
 ### When will this change occur?
 
-The Federal PKI's target date for mitigation actions is *December 31, 2018*.  We anticipate that COMMON will be removed from the Microsoft certificate store in early 2019.
+The Federal PKI's target date for mitigation actions was *December 31, 2018*.  We anticipate that COMMON will be removed from the Microsoft certificate store in early 2019.
 
 ### Is COMMON changing?
 
