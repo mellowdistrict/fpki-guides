@@ -5,7 +5,7 @@ collection: truststores
 permalink: /truststores/
 ---
 
-This is a high-level overview of what application trust stores are and a list of commonly used trust stores and settings.  
+This is a high-level overview of trust stores and a list of commonly used trust stores and settings.  
 
 * [What is a trust store?](#what-is-a-trust-store)
 * [What are the most commonly used trust stores?](#what-are-the-most-commonly-used-trust-stores)
@@ -16,29 +16,28 @@ This is a high-level overview of what application trust stores are and a list of
 ### What is a trust store?
 There are millions of identity certificates issued to people and devices around the world.  Certificates constantly change as some are revoked and others are issued&mdash;far too many for your computer to maintain an up-to-date list.  
 
-Instead, a list of **trusted root certificates** is maintained.  When you are presented with a person or device certificate from a PIV credential, website, email, or some other digital item, your operating system or application will check to see whether the presented certificate has a valid path to one of the trusted root certificates in its trust store. (_Certificate store_ is another term used for trust store.)
+Instead, a list of **trusted root certificates** is maintained.  When you are presented with a person or device certificate from a PIV credential, website, email, or some other digital item, your operating system or application will check to see whether the certificate has a valid path to one of the trusted root certificates in its trust store. (_Certificate store_ is another term used for trust store.)
 
 ### What are the most commonly used trust stores?
 Operating systems, browsers, and some commercial software use trust stores to verify whether a certificate with which you are being presented should be trusted.  
 
-Here are some common trust stores, and whether the Federal Common Policy CA (COMMON) root certificate is included and distributed by _default_.
+Here are some common trust stores. If the Federal Common Policy CA (COMMON) root certificate is included in a trust store and distributed by _default_, the _Includes FCPCA?_ column below will say _Yes_.  
 
 {% include alert-info.html content="The Federal Common Policy CA root certificate will be removed from both the Microsoft and Apple Trust Stores.  Please see the Announcements section for more information. " %} 
 
 Trust Store|Includes FCPCA?<br>(COMMON)|Trust Store Manager|Platforms Serviced|Program Information Location
 ---|---|---|---|---
-Microsoft Trusted Root Certificate Program|Yes (pending removal)|Microsoft Management Console|Windows OS, Internet Explorer Browser, Outlook|http://aka.ms/RootCert
-Apple Root Certificate Program|Yes (pending removal)|Keychain Access Utility|macOS, iOS, tvOS, WatchOS, Safari Browser|https://www.apple.com/certificateauthority/ca_program.html
+Microsoft Trusted Root Certificate Program|Yes (COMMON removal is pending)|Microsoft Management Console|Windows OS, Internet Explorer Browser, Outlook|http://aka.ms/RootCert
+Apple Root Certificate Program|No (previously included in macOS 10.13/iOS 11 and prior versions)|Keychain Access Utility|macOS, iOS, tvOS, WatchOS, Safari Browser|https://www.apple.com/certificateauthority/ca_program.html
 Mozilla Network Security Services (NSS)|No |Browser trust store|Firefox, Thunderbird, Linux Operating Systems|https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
 Adobe Approved Trust List|Yes|Application trust store|Adobe Acrobat|https://helpx.adobe.com/acrobat/kb/approved-trust-list2.html
 Java Root Certificate Program|No|Java Applet|Java Distributions|http://www.oracle.com/technetwork/java/javase/javasecarootcertsprogram-1876540.html
-Google|No|Google Admin Console|Chrome Browser, Android OS, Chromium OS|https://www.chromium.org/Home/chromium-security/root-ca-policy
-Opera|No longer operates its own program and relies on Mozilla
+Google|No|Google Admin Console|Android OS, Chromium OS|https://www.chromium.org/Home/chromium-security/root-ca-policy
+Opera|No longer operates its own trust store program but relies on Mozilla
 
 {% include alert-info.html content="Google Chrome uses the trust store of the operating system on Microsoft, Apple, and Android systems. Linux-based systems distribute the Mozilla NSS Library, which may be modified by each version of Linux." %}
 
-
-### How do I set dynamic path validation for the trust store in Windows operating systems?
+### How do I set dynamic path validation for the trust store in the Windows operating systems?
 
 With dynamic path validation (as opposed to static path validation), the certificate validation libraries will build the certificate chain based on the Authority Information Access (AIA) entry in the certificate.  
 
@@ -59,14 +58,14 @@ Federal PKI certificates may be used for digitally signing documents between fed
 A common question is "which certificate policies are trusted?" You can view the certificate policies that are trusted in Adobe Acrobat:
 
   1. Open Adobe Acrobat.  
-  1. _Edit_ > _Preferences_ > _Signatures_ > _Identities & Trusted Certificates_.
+  1. _Edit_ > _Preferences_ > _Signatures_ > _Identities & Trusted Certificates_ > _More_.
   2. Choose _Trusted Certificates_ from the left-hand sidebar.  
   3. Choose _Federal Common Policy CA_ and then the _Certificate Details_ tab.
   3. Choose the _Certificate Viewer_ window, and click the _Policies_ tab to see _Policy Restrictions_. 
   4. In _Certificate Policies_, you will see a comma-separated list of policy Object Identifiers (OIDs).
 
 
-The current policy OIDs list for the Federal Common Policy CA is:
+The current policy OIDs for the Federal Common Policy CA are
 
 | Common Policy                                 | Common OID                | Certificate Use                                       |
 |:-----------------------------------------------|:---------------------------|:-----------------------------------------------------------------------------------|
