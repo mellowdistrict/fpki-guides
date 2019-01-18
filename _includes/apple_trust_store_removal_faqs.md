@@ -3,8 +3,8 @@
 ### Where can I get the DHS Federal Network Resilience (FNR) Webinar slides?
 The FNR Webinar slides (.pdf) can be found [here.]({{site.baseurl}}/docs/FPKI_Trust_Removal_-_FNR_Webinar_08022018.pdf){:target="blank"} 
 
-### If I redistribute COMMON today, it won’t get erased when I update to the next major release of my Apple device’s operating system, right?
-Correct. We have verified this on both macOS and iOS. 
+### If I redistributed COMMON today, won’t it get erased when I update to the next major release of my Apple device’s operating system?
+Incorrect. If you redistributed COMMON already, it will *not* get erased when you upgrade to the next major release of your Apple device’s operating system. We have verified this for both macOS and iOS.  So, if you haven't already done so, please redistribute COMMON today!  
 
 ### I'm still not sure I get it. Can you explain this change to me in a different way?
 - **Current State**: Apple distributes COMMON from its certificate stores to all Apple devices. This means that Apple *trusts* COMMON as a *known root certification authority*. Because Apple *trusts* COMMON, it trusts all Federal PKI CA-issued certificates because they validate to COMMON.
@@ -67,7 +67,7 @@ If you use other Apple operating system versions (e.g., tvOS, watchOS) in your e
 
 ### When will this change occur?
 
-The Federal community's target date for mitigation actions was *August 31, 2018*.  Apple operating system release dates below:
+The FPKI community's target date for mitigation actions was *August 31, 2018*.  Apple operating system release dates below:
 
 | **macOS** |  **iOS** | **tvOS** | 
 | :-------- |  :-------- | :-------- | 
@@ -124,4 +124,4 @@ As a BYOD program device user, if you perform one of these activities, you'll ne
 
 ### How can I test the impact of the Federal	Common Policy CA's removal?
 
-If interested in learning more about Apple’s public Beta test program, please contact us at fpki@gsa.gov.
+If you are interested in learning more about Apple’s public Beta testing program, please contact us at fpki@gsa.gov.
