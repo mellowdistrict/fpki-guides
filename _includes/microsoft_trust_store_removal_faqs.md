@@ -17,7 +17,7 @@ The FNR Webinar slides (.pdf) can be found [here.]({{site.baseurl}}/docs/FPKI_Tr
 - Virtual Private Networks (VPNs)
 
 #### 2. (Medium Impact) Error fatigue:
-- Unexpected application errors and system behavior for legacy and Government, off-the-Shelf (GOTS) products
+- Unexpected application errors and system behavior for legacy and Government off-the-Shelf (GOTS) products
 
 #### 3. (Low Impact) Digital-signature validation failures:
 - Email
