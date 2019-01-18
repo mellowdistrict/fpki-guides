@@ -87,7 +87,7 @@ To verify the redistribution of the COMMON root CA certificate to your agency's 
 ### Use Microsoft Certificate Manager
 
 1. Open *Microsoft Certificate Manager*:&nbsp;&nbsp;**Start**; then type **certlm.msc** and press **Enter**.
-2. Go to **Trusted Root Certification Authorities** -> **Certificates**. If COMMON has been successfully redistributed, you will see an entry for it in the certificates list that displays an **Intended Purposes** value of *ALL* and a **Friendly Name** of *None*  :<br><br />
+2. Go to **Trusted Root Certification Authorities** -> **Certificates**. If COMMON has been successfully redistributed, you will see an entry for it in the certificates list that displays an **Intended Purposes** value of *ALL* and a **Friendly Name** of *None*, as seen below:<br><br />
     ![Trusted Root CAs List]({{site.baseurl}}/img/verify_trust.png){:style="width:90%;"}
     
 **Note:** You **may** see 2 (or more) copies of COMMON, depending on how the certificate was distributed. The screenshot above lists 3 entries for COMMON:
